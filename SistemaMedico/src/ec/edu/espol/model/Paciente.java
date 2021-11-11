@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistemamedico;
+package ec.edu.espol.model;
 
 import java.time.LocalDate;
 
@@ -11,21 +11,17 @@ import java.time.LocalDate;
  *
  * @author Eliot
  */
-public class Persona {
-    protected String usuario;
-    protected String clave;
-    protected String nombre;
-    protected String apellido;
-    protected String direccion;
-    protected LocalDate fechaNac;
+public class Paciente extends Persona{
+    protected String email;
 
-    public Persona(String usuario, String clave, String nombre, String apellido, String direccion, LocalDate fechaNac) {
-        this.usuario = usuario;
-        this.clave = clave;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.direccion = direccion;
-        this.fechaNac = fechaNac;
+    public Paciente(String email, String usuario, String clave, String nombre, String apellido, String direccion, LocalDate fechaNac) {
+        super(usuario, clave, nombre, apellido, direccion, fechaNac);
+        this.email = email;
+    }
+    
+
+    public String getEmail() {
+        return email;
     }
 
     public String getUsuario() {
@@ -52,6 +48,10 @@ public class Persona {
         return fechaNac;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
@@ -75,14 +75,7 @@ public class Persona {
     public void setFechaNac(LocalDate fechaNac) {
         this.fechaNac = fechaNac;
     }
-    public boolean logIn(){
-        if(true){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    public boolean logOut(){
+    public boolean solicitarCita(){
         if(true){
             return true;
         }else{
